@@ -112,6 +112,7 @@ function Qiwi(token) {
         };
 
         request.post(options, (error, response, body) => {
+            if(typeof body.code != 'undefined') error = body;
             callback(error, body);
         });
     }
